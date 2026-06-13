@@ -6,7 +6,7 @@ export default function HomeScreen() {
   const [cnpj,setCnpj]=useState("")
   const router = useRouter();
   function buscarInformacoes(){
-    router.push({pathname:"/MostarDados",params: {cnpj}})
+    router.push({pathname:"/MostrarDados",params: {cnpj}})
   }
   return (
     <View>
