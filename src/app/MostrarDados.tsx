@@ -72,19 +72,19 @@ export default function MostrarDados(){
                 <FontAwesome name="arrow-left" size={24} color="black" />
             </TouchableOpacity>
             <View style={styles.container}>
-                <Text>
+                <Text style={styles.textoPrincipal}>
                     Razão Social: {razaoSocial}
                 </Text>
-                <Text>
+                <Text style={styles.textoPrincipal}>
                     CNPJ: {cnpjVindo}
                 </Text>
-                <Text>
+                <Text style={styles.textoPrincipal}>
                     UF: {uf}
                 </Text>
-                <Text>
+                <Text style={styles.textoPrincipal}>
                     Municipio: {municipio}
                 </Text>
-                <Text>
+                <Text style={styles.textoPrincipal}>
                     Nome Fantasia: {nomeFantasia}
                 </Text>
             </View>
@@ -92,10 +92,10 @@ export default function MostrarDados(){
             data={empresas}
             keyExtractor={(item, index) => index.toString()}
             renderItem={({ item, index }) => (
-                <View>
-                <Text>
-                    Busca {index + 1} - {item.cnpj} - {item.razaoSocial}
-                </Text>
+                <View style={styles.containerHistorico}>
+                    <Text>
+                        {index + 1}° - {item.cnpj} - {item.razaoSocial}
+                    </Text>
                 </View>
             )}
             />
@@ -113,6 +113,21 @@ const styles=StyleSheet.create({
         width: 300,
         marginLeft: 30,
         marginTop: 30,
-        gap: 5
+        gap: 5,
+        borderRadius: 10
+    },
+    textoPrincipal:{
+        marginLeft: 7
+    },
+    containerHistorico:{
+        backgroundColor: "#b8dbc7",
+        width: 300,
+        borderRadius: 10,
+        marginLeft: 30,
+        marginTop: 15,
+        height: 40,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
     }
 })
